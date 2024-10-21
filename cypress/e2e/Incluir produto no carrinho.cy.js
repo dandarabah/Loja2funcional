@@ -5,20 +5,18 @@ describe('itens_carrinho', () => {
     })
     it('Verificar o(s) iten(s) no carrinho de compra', () => {
         // clicar na lupa de pesquisa
-        cy.get('#mobileSearch > .roboto-medium').click();
+        cy.get(':nth-child(4) > .img').click();
         //digito Laptop no campo de pesquisa
-        cy.get('#mobile_search').should('be.visible')
-        cy.get('#mobileSearch > .roboto-medium').type('laptop')
-        cy.get('#mobileSearch > .roboto-medium').click();
+        cy.get('#autoComplete').should('be.visible').type('laptop')
+        cy.wait(5000)
         //As opções de Laptops são exibidos"
-        cy.contains('a', 'titleItemsCount ng-binding').should('be.visible')
+        cy.get('.top6Products > .roboto-medium.ng-binding').should('be.visible')
         // Selecionar um produto"
-        cy.contains('h1', 'roboto-regular ng-binding').should('be.visible')
+        cy.get('[href="#/product/6"] > img').click();
         //Clicar no botão ADD TO CART"
         cy.get('.fixedBtn > .roboto-medium').click();
         //O produto é adicionado no carrinho com sucesso
-        cy.get('menuCart').click();
-        cy.title('h', 'roboto-regular center sticky fixedImportant ng-binding').should('eq',
-            'SHOPPING CART')
+        cy.get('#shoppingCartLink').click();
+        cy.get('.sticky > .ng-binding').should('be.visible')
     })
 });

@@ -1,12 +1,17 @@
 Site da página: https://advantageonlineshopping.com/#/
 
+
 Swagger UI: https://www.advantageonlineshopping.com/api/docs/
 
 
 Configuração de ambiente cypress:
 
  git init: para iniciar o repositório git
+
+ 
  npm init: para iniciar o projeto 
+
+ 
  npm install cypress@13.14.2 --save-dev 
 
 

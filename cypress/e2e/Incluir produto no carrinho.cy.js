@@ -16,7 +16,7 @@ describe('itens_carrinho', () => {
         cy.contains('h1', 'roboto-regular ng-binding').should('be.visible')
         //Clicar no botão ADD TO CART"
         cy.get('.fixedBtn > .roboto-medium').click();
-        //O produto é adicionado no carrinho com sucess
+        //O produto é adicionado no carrinho com sucesso
         cy.get('menuCart').click();
         cy.title('h', 'roboto-regular center sticky fixedImportant ng-binding').should('eq',
             'SHOPPING CART')
